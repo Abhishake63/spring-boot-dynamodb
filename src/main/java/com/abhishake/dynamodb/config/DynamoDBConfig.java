@@ -1,6 +1,5 @@
 package com.abhishake.dynamodb.config;
 
-import io.awspring.cloud.dynamodb.DynamoDbTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,10 +38,5 @@ public class DynamoDBConfig {
         return DynamoDbEnhancedClient.builder()
                 .dynamoDbClient(dynamoDbClient())
                 .build();
-    }
-
-    @Bean
-    public DynamoDbTemplate dynamoDbTemplate() {
-        return new DynamoDbTemplate(dynamoDbEnhancedClient());
     }
 }
